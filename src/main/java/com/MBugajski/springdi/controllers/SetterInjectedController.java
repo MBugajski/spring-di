@@ -11,7 +11,9 @@ public class SetterInjectedController {
     private GreetingService greetingService;
 
     @Autowired
-    public void setGreetingService(@Qualifier("setterGreetingService") GreetingService greetingService){
+//    @Qualifier("setterGreetingService")
+//    Without qualifier the primary bean will be used instead, but app will run without this qualifier if primary bean is specified (will not, without it)
+    public void setGreetingService( GreetingService greetingService){
         this.greetingService = greetingService;
     }
 

@@ -1,6 +1,7 @@
 package com.MBugajski.springdi;
 
 import com.MBugajski.springdi.controllers.ConstructorInjectedController;
+import com.MBugajski.springdi.controllers.I18nController;
 import com.MBugajski.springdi.controllers.MyController;
 import com.MBugajski.springdi.controllers.PropertyInjectedController;
 import com.MBugajski.springdi.controllers.SetterInjectedController;
@@ -15,6 +16,9 @@ public class SpringDiApplication {
 
 	public static void main(String[] args) {
 		ApplicationContext ctx = SpringApplication.run(SpringDiApplication.class, args);
+
+		I18nController i18nController = (I18nController) ctx.getBean("i18nController");
+		System.out.println(i18nController.sayHello());
 
 		MyController myController = (MyController) ctx.getBean("myController");
 
